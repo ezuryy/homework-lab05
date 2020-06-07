@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 project(banking)
 
-set(CMAKE_CXX_STANDART 17)
+set(CMAKE_CXX_STANDART 11)
 set(CMAKE_CXX_STANDART_REQUIRED ON)
 
 option(BUILD_TEST "Build tests" OFF)
