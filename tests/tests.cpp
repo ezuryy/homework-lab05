@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "Account.h"
 #include "Transaction.h"
 
@@ -7,14 +6,13 @@
 
 class AccountMock : public Account {
 public:
-	AccountMock(int id, int balance) : Account(id, balance) {}
-	MOCK_CONST_METHOD0(GetBalance, int());
-	MOCK_METHOD1(ChangeBalance, void(int diff));
-	MOCK_METHOD0(Lock, void());
-	MOCK_METHOD0(Unlock, void());
+  AccountMock(int id, int balance) : Account(id, balance) {}
+  MOCK_CONST_METHOD0(GetBalance, int());
+  MOCK_METHOD1(ChangeBalance, void(int diff));
+  MOCK_METHOD0(Lock, void());
+  MOCK_METHOD0(Unlock, void());
 };
-=======
->>>>>>> dc7c07ef90ec83f0065d3b6885bb09180f169ed2
+
 class TransactionMock : public Transaction {
 public:
 	MOCK_METHOD3(Make, bool(Account& from, Account& to, int sum));
