@@ -1,21 +1,20 @@
-os:
-    - linux
-
-addons:
-    apt:
-        - cmake
-        - cmake-data
-
 language: cpp
 
-compiler:
-    - clang
-    - gcc
+os:
+  - linux
+
+addons:
+  apt:
+    sources:
+    - george-edison55-precise-backports
+    packages:
+    - cmake
+    - cmake-data
 
 script:
-    - cmake -H. -B_build -DBUILD_TESTS=ON
-    - cmake --build _build
-    - cmake --build _build --target test -- ARGS=--verbose
+- cmake -H. -B_build -DBUILD_TESTS=ON
+- cmake --build _build
+- cmake --build _build --target test -- ARGS=--verbose
 
 before_install:
 - pip install --user cpp-coveralls
