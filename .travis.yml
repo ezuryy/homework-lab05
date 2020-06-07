@@ -17,8 +17,8 @@ before_install:
 
 script:
     - cmake -H. -Bbuild -DBUILD_TESTS=ON -DCOVERAGE=ON
-    - cmake --build build/
-    - cmake --build build --target test -- ARGS=--verbose
+    - cmake --build _build
+    - cmake --build _build --target test -- ARGS=--verbose
 
 after_success:
     - coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*"
